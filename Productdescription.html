@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Flipkart style Product Description page</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+  <!-- <link rel="stylesheet" href="./style.css"> -->
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <!--jQuery library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!--Latest compiled and minified JavaScript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Navbar in Bootstrap</title>
+  </head>
+  <style>
+    .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+    color: white;
+}
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    color: white;
+}
+.alert{
+  display: none;
+}
+</style>
+
+  <body>
+    <nav class="navbar navbar-dark navbar-fixed-top" style="background-color:#2874f0;">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="#">Furniture Store</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" id="searchRefNo" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href=""><span class="glyphicon glyphicon-shopping-cart"></span>
+                <span class="total-count"></span></a>
+            </li>
+            <li><a href=""><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+            <li><a href=""><span class="glyphicon glyphicon-log-out"></span> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <br></br>
+    <br></br>
+    <div class="myAlert-top alert alert-success">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Success!</strong> Item added to cart successfully.
+    </div>
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Product picture -->
+          <div class="col-sm-5">
+            <div class="thumbnail">
+              <img id="skuimage" src="" class="img-responsive" style="height: 350px;" alt="">
+
+              <div class="caption">
+                <div class="row buttons">
+
+                  <button class="add-to-cart btn btn-primary" style="background-color:#ff9f00; color:#fff;font-size:1em;margin-left: auto;margin-right: auto;display:block"><span
+                      class="glyphicon glyphicon-shopping-cart" onClick="ViewProductDetails(this.class)"></span>&nbsp;ADD
+                    TO CART</button>
+
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Product Description -->
+          <div class="col-sm-7 desc">
+
+            <div>
+
+              <!-- <ol class="breadcrumb col-sm-12" style="background-color:transparent;">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="">Mobiles</a></li>
+                <li><a href="">iPhone</a></li>
+                <li class="active">iPhone X</li>
+              </ol> -->
+
+              <h4 id="skuname"></h4>
+              <h3 id="skucode"></h3>
+              <div class="row">
+                <div class="col-sm-2">
+                  <span class="label label-success">4.6 <span class="glyphicon glyphicon-star"></span></span>
+                </div>
+
+                <div class="col-sm-5">
+                  <strong>2,421 Ratings & Reviews</strong>
+                </div>
+
+              </div>
+
+              <div>
+                <h3 id="skuprice"></h3>
+              </div>
+
+
+
+
+              <br>
+
+
+
+
+
+
+              <br><br>
+
+              <div id="highlights">
+                <strong class="col-xs-3">Highlights</strong>
+                <ul class="col-xs-6">
+                  <li> 64GB ROM</li>
+                  <li> 5.8 inch Super Retina HD Display</li>
+                  <li> 12MP + 12MP Dual Rear Camera | 7MP Front Camera</li>
+                  <li> lithium-ion Battery</li>
+                  <li> A11 Bionic Chip with 64-bit Architecture, Neural Engine, Embedded M11 Motion Co-processor</li>
+                </ul>
+              </div>
+
+            </div>
+            <br><br>
+
+            <div class="container col-xs-12" style="margin-top:50px;">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div class="col-sm-12">
+                    <h3>PRODUCT DESCRIPTION</h3>
+                    <p>Meet the iPhone X - the device that’s so smart that it responds to a tap, your voice, and even a
+                      glance. Elegantly designed with a large 14.73 cm (5.8) Super Retina screen and a durable
+                      front-and-back glass, this smartphone is designed to impress. What’s more, you can charge this
+                      iPhone wirelessly.</p>
+
+                  </div>
+
+                </div>
+
+
+
+                <div class="panel-footer">
+
+
+
+                  <h4><a href="" style="text-decoration:none;">View all features</a></h4>
+
+
+                </div>
+
+              </div>
+
+
+
+
+            </div>
+
+          </div>
+        </div>
+    </section>
+
+    <br><br>
+    <!-- FOOTER -->
+
+
+
+  </body>
+  <!-- partial -->
+
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var Skuname = "", Price = "", Code = "";
+      if (localStorage && localStorage.getItem('Productdetails') != undefined) {
+        var getdata = JSON.parse((localStorage.getItem('Productdetails')));
+
+        document.getElementById("skuname").innerHTML = getdata.sku;
+        document.getElementById("skuprice").innerHTML = getdata.price;
+        document.getElementById("skucode").innerHTML = getdata.product_id;
+        document.getElementById("skuimage").src = getdata.image;
+      }
+    });
+    $("#searchRefNo").on("keyup", function () {
+      var value = $(this).val().toLowerCase();
+      $("#test12").filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  </script>
+  <script src="allproducts.js"></script>
+</body>
+
+</html>

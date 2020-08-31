@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="app.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <title>js-tutorials.com : Alternate row colors using jquery</title>
+</head>
+
+<body>
+  <!-- Nav -->
+  <!-- <nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button
+          class="clear-cart btn btn-danger">Clear Cart</button></div>
+    </div>
+  </nav> -->
+  <nav class="navbar navbar-dark navbar-fixed-top" style="background-color:#2874f0;">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="#">Furniture Store</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <form class="navbar-form navbar-left" style="margin-top:-5px">
+          <div class="form-group">
+            <input type="text" id="searchRefNo" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="ex4">
+            <a href=""><span class="glyphicon glyphicon-shopping-cart"></span>
+              <span class="total-count"></span></a>
+          </li>
+          <li><a href=""><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+          <li><a href=""><span class="glyphicon glyphicon-log-out"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+
+  <div class="container">
+    <div class="row">
+      <!--Sidebar-->
+      <div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">
+
+        <div class="widget-wrapper">
+          <h4>Sort:</h4>
+          <br>
+          <div class="list-group">
+            <a href="#" class="list-group-item">Collection
+              <select list-group-item active style="border:none;width: 103%;background: none;">
+                <option></option>
+                <option>Italy </option>
+                <option>Chicago </option>
+                <option>New York </option>
+                <option>Houston </option>
+              </select>
+            </a>
+            <a href="#" class="list-group-item">Color
+              <select list-group-item active style="border:none;width: 103%;background: none;">
+                <option> </option>
+                <option>Brown </option>
+                <option>Red </option>
+                <option>yellow </option>
+              </select>
+            </a>
+            <a href="#" class="list-group-item">Category
+              <select list-group-item active style="border:none;width: 103%;background: none;">
+                <option></option>
+                <option>Home </option>
+                <option>Guest house </option>
+                <option>Office </option>
+                <option>Public garden </option>
+              </select>
+            </a>
+
+            <a href="#" class="list-group-item">Price range
+              <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
+                <div>
+                  <p>
+                    <input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" />
+                  </p>
+
+                  <div id="slider-range"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+
+
+      </div>
+      <!--/.Sidebar-->
+      <div class="col-lg-8">
+        <div id="test12"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+</body>
+
+</html>
+<script type="text/javascript">
+  var messageBox = document.getElementById("display");
+  var skus = [];
+  $(document).ready(function () {
+    const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json',
+      skus = [];
+
+    fetch(endpoint)
+      .then(blob => blob.json())
+      .then(data => {
+        // console.log(JSON.stringify(data));
+        var i;
+        var price = 10;
+        for (i = 0; i < 30; i++) {
+          price = parseInt(price) + 50;
+          if ((i % 2 == 0) && (i % 4 == 0)) {
+            skus.push({
+              'name': data[i].city,
+              'product_id': "Code:" + data[i].rank,
+              'sku': data[i].city,
+              'price': "Price: $" + price,
+              'image': "https://s3-us-west-2.amazonaws.com/s.cdpn.io/867725/jarvis-silver-rec-base%5B1%5D.png"
+            });
+          }
+          if (i % 3 == 0) {
+            skus.push({
+              'name': data[i].city,
+              'product_id': "Code:" + data[i].rank,
+              'sku': data[i].city,
+              'price': "Price: $" + price,
+              'image': "https://s3-us-west-2.amazonaws.com/s.cdpn.io/867725/cd8d9d636efc7bed2d7bb96d3925cd7c%5B1%5D.png"
+            });
+          }
+          if (i % 4 == 0) {
+            skus.push({
+              'name': data[i].city,
+              'product_id': "Code:" + data[i].rank,
+              'sku': data[i].city,
+              'price': "Price: $" + price,
+              'image': "https://s3-us-west-2.amazonaws.com/s.cdpn.io/867725/09b6e9f4d055b575b094a9c85dc89594%5B1%5D.png"
+            });
+          }
+          if (i % 5 == 0) {
+            skus.push({
+              'name': data[i].city,
+              'product_id': "Code:" + data[i].rank,
+              'sku': data[i].city,
+              'price': "Price: $" + price,
+              'image': "https://s3-us-west-2.amazonaws.com/s.cdpn.io/867725/09710f3d9e55a7f8ad2e8353327ac7ff%5B1%5D.png"
+            });
+          }
+          if (i % 6 == 0) {
+            skus.push({
+              'name': data[i].city,
+              'product_id': "Code:" + data[i].rank,
+              'sku': data[i].city,
+              'price': "Price: $" + price,
+              'image': "https://s3-us-west-2.amazonaws.com/s.cdpn.io/867725/be784f6a320c39e063bba64cf936f09c%5B1%5D.png"
+            });
+          }
+          // else {
+          //   skus.push({
+          //     'name': data[i].city,
+          //     'product_id': "Code:" + data[i].rank,
+          //     'sku': data[i].city,
+          //     'price': "Price: $" + price,
+          //     'image': "https://s3-us-west-2.amazonaws.com/s.cdpn.io/867725/d0b4d1278dbe18b7c0c99753953a1e7b%5B1%5D.png"
+          //   });
+
+          // }
+        }
+        var dummyskus = [];
+        dummyskus = skus;
+        // console.log(skus.length + "AllProducts@@@@@@@@@@@@@@@@@@@@::" + JSON.stringify(skus));
+        dummyskus = dummyskus.reduceRight(function (key, value) {
+          key.some(function (res) { return value.product_id === res.product_id; }) || key.push(value);
+          return key;
+        }, []);
+        //  console.log(dummyskus.length + "after AllProducts::" + JSON.stringify(skus));
+        localStorage.setItem('AllProducts', JSON.stringify(dummyskus))
+
+        $.each(skus, function (i) {
+          var templateString = '<div class="col" id="' + skus[i].product_id + '" onClick="ViewProductDetails(this.id)"><div class="card" style="width: 20rem;"><img class="card-img-top" src="' + skus[i].image + '" alt="Card image cap"> <div class="card-block"><h4 class="card-title">' + skus[i].name + '</h4><p class="card-text">' + skus[i].product_id + '</p><p class="card-text">' + skus[i].price +
+            '</p>  <a href="#" data-name="' + skus[i].name + '" data-price="' + skus[i].price + '" class="add-to-cart btn btn-primary">View</a></div></div></div>';
+          $('#test12').append(templateString);
+        })
+
+
+
+      });
+
+  });
+  $(function () {
+    $("#slider-range").slider({
+      step: 1,
+      range: true,
+      min: 0,
+      max: 5000,
+      values: [1, 5000],
+      slide: function (event, ui) {
+        $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+      }
+    });
+    $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+      " - $" + $("#slider-range").slider("values", 1));
+  });
+  $("#searchRefNo").on("keyup", function () {
+    var value = $(this).val().toLowerCase();
+    $("#test12").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+</script>
+<script src="allproducts.js"></script>

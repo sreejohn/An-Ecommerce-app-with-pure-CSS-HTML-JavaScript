@@ -1,0 +1,257 @@
+body {
+  padding-top: 80px;
+}
+
+.show-cart li {
+  display: flex;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  width: 100px;
+  height: 200px;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+nav .navbar-header a {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
+}
+
+nav .navbar-header a, ul li a {
+  color: #fff;
+}
+
+nav .navbar-header button .fa {
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 4px 10px;
+  font-size: 1.5em;
+  position: absolute;
+  top: -0.5px;
+  left: -30px;
+}
+
+.glyphicon-search {
+  color: #2874f0;
+}
+
+form {
+  position: relative;
+  top: 10px;
+}
+
+.menu {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+section {
+  position: relative;
+  top: 4.5em;
+}
+
+section .container-fluid .thumbnail .caption .buttons {
+  margin: 1px;
+}
+
+section .desc h5 .glyphicon {
+  color: #5cb85c;
+}
+
+section .desc .breadcrumb {
+  padding-left: 0;
+}
+
+section .desc button:hover {
+  background-color: #fff;
+  border: 1px solid #2874f0;
+  color: #2874f0;
+}
+
+footer {
+  position: relative;
+  top: 15em;
+  color: #565656;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+footer .container .col-sm-4 ul li a {
+  color: #565656;
+}
+
+footer .container .col-sm-4 ul li a:hover {
+  text-decoration: none;
+}
+
+footer .container-fluid span {
+  font-size: 30px;
+  position: absolute;
+  top: 25%;
+  left: 12%;
+}
+
+footer .container-fluid h3 {
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+footer .contact button {
+  background-color: #565656;
+  color: #fff;
+}
+
+@media (min-width:863px) {
+  footer .container-fluid span {
+    font-size: 40px;
+    position: absolute;
+    top: 10%;
+  }
+  footer .container-fluid h3 {
+    font-size: 1.9rem;
+    width: 70%;
+    position: relative;
+    left: 15%;
+    top: -10px;
+  }
+}
+
+.cards {
+  margin: -1rem;
+}
+
+.card {
+  width: 220px;
+  float: left;
+  margin: 1rem;
+  border: 1px solid #d3d3d3;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+@supports (display: grid) {
+  .cards {
+    margin: 0;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+  }
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 100%;
+}
+
+#slider {
+  margin: 50px;
+}
+
+.value {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  margin: 0 0 0 -20px;
+  width: 40px;
+  text-align: center;
+  display: block;
+  /* optional */
+  font-weight: normal;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.price-range-both.value {
+  width: 100px;
+  margin: 0 0 0 -50px;
+  top: 26px;
+}
+
+.price-range-both {
+  display: none;
+}
+
+.value i {
+  font-style: normal;
+}
+
+body div.ui-slider-range.ui-widget-header {
+  background: #F44336;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+  background: #2ecaf9 !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: #2ecaf9 !important;
+  border-radius: 50%;
+  font-size: 21px;
+  border: none !important;
+  box-shadow: 0 0 7px #306473;
+}
+
+span.ui-slider-handle.ui-corner-all.ui-state-default:focus {
+  outline: none;
+}
+
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+  color: white;
+}
+
+.navbar-nav>li>a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+  color: white;
+}
+
+.myAlert-top {
+  position: fixed;
+  top: 5px;
+  left: 2%;
+  width: 96%;
+}
+
+.myAlert-bottom {
+  position: fixed;
+  bottom: 5px;
+  left: 2%;
+  width: 96%;
+}
+
+div.fullscreen {
+  position: absolute;
+  width: 100%;
+  height: 960px;
+  top: 0;
+  left: 0;
+  background-color: lightblue;
+}
